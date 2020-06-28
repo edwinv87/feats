@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: feats
+Version: 1.0.0
+Summary: A python tool for performing downstream analysis on Single Cell RNA-seq datasets
+Home-page: https://github.com/edwinv87/feats
+Author: Edwin Vans
+Author-email: vans.edw@gmail.com
+License: UNKNOWN
+Description: # FEATS
+        
+        A new python tool for performing the following downstream analysis on single cell RNA-seq datasets:
+        
+        1. Clustering
+        2. Estimating the number of clusters
+        3. Outlier detection
+        4. Batch correction and integration of data from multiple experiments
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
