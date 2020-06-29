@@ -1,6 +1,2 @@
 theme: jekyll-theme-cayman
 title: FEATS
-
-header_pages:
-  - README.md
-  - docs/FEATS-Clustering.md
