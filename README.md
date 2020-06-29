@@ -9,6 +9,16 @@ FEATS is a new Python tool for performing the following downstream analysis on s
 3. Outlier detection
 4. Batch correction and integration of data from multiple experiments
 
+## Prerequisites
+
+FEATS depends on the following packages
+
+1. numpy
+2. pandas
+3. scikit-learn
+4. scipy
+5. [singlecelldata](https://edwinv87.github.io/singlecelldata/)
+
 ## Installation
 
 To install FEATS run the following command:
@@ -19,16 +29,6 @@ To install FEATS run the following command:
 
 The functional reference manual for FEATS is available [here](https://feats.readthedocs.io/en/latest/index.html).
 
-### Prerequisites
-
-FEATS depends on the following packages
-
-1. numpy
-2. pandas
-3. scikit-learn
-4. scipy
-5. [singlecelldata](https://edwinv87.github.io/singlecelldata/)
-
 ### Examples
 
 To use FEATS, please refer to the following example code presented in notebook sytle environment.
@@ -36,6 +36,10 @@ To use FEATS, please refer to the following example code presented in notebook s
 1. [Clustering using FEATS](docs/FEATS-Clustering.md)
 2. Performing outlier analysis
 3. Performing batch correction
+
+### Data
+
+The data for the examples in this section is available here.
 
 ## Paper
 
