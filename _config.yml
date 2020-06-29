@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 title: FEATS
-show_downloads: "true"
-github:
-  zip_url: https://1drv.ms/u/s!At-SAxmefBX_gr47oWbiMS8vSSKWRA?e=F4FUrt
-  another_url: https://1drv.ms/u/s!At-SAxmefBX_gr47oWbiMS8vSSKWRA?e=F4FUrt
+
+header_pages:
+  - README.md
+  - docs/FEATS-Clustering.md
