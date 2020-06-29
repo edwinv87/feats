@@ -15,13 +15,21 @@ To install FEATS run the following command:
 
 ## Documentation
 
-The functional reference manual for FEATS is available here.
+The functional reference manual for FEATS is available [here](https://feats.readthedocs.io/en/latest/index.html).
 
 ## Usage
 
+Details coming soon.
+
 ### Prerequisites
 
-FEATS depends on the following packages.
+FEATS depends on the following packages
+
+1. numpy
+2. pandas
+3. scikit-learn
+4. scipy
+5. [singlecelldata](https://edwinv87.github.io/singlecelldata/)
 
 ### Examples
 
@@ -33,7 +41,7 @@ To use FEATS, please refer to the following examples presented in notebook sytle
 
 ## Paper
 
-The accompanying paper for feats is available here.
+Coming soon!
 
 ## Contact
 
