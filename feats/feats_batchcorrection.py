@@ -257,6 +257,38 @@ def RemoveBatchEffects(ref_batch, tar_batch, k , sigma, svd_dim, adj_var):
 
 
 def IntegrateBatches(batches, name_by):
+    """
+    Integrates a list of SingleCell objects storing single-cell data. This function
+    first finds common genes across all the datasets in the list and then merges all 
+    the datasets together in one SingleCell object. If no common genes are found between 
+    the datasets, then an error is generated with a message. 
+
+    Parameters
+    ----------
+
+    batches : list
+        A Python list of SingleCell objects (datasets) to integrate. 
+    
+    name_by : list
+        A list of str representing column names in the SingleCell objects where gene names
+        are stored. The order in this list is same as the order of SingleCell objects in
+        the batches list.
+
+    Returns
+    -------
+
+    SingleCell
+        A merged dataset where the number of rows (d) is equal to the number of common genes in all the 
+        datasets and the number columns (n) is the sum of the number of cells in all the datasets. 
+
+    Raises
+    ------
+    
+    ValueError
+        If no common genes are found between the SingleCell datasets in the batches list. 
+
+    """
+
 
     print ("Integrating Batches . . .")
 
@@ -314,6 +346,34 @@ def IntegrateBatches(batches, name_by):
 
 
 def MergeBatches(batches):
+    """
+    Merges a list of SingleCell objects storing single-cell data. This function
+    assumes that the datasets are already integrated and the number and type of genes
+    in all the datasets are the same. If this is not the case, then an error is generated. 
+
+    Parameters
+    ----------
+
+    batches : list
+        A Python list of SingleCell objects (datasets) to merge. It is assumed that the
+        SingleCell datasets are already integrated. 
+
+
+    Returns
+    -------
+
+    SingleCell
+        A merged dataset where the number of rows (d) is equal to the number genes the datasets 
+        (which is the same for all the datasets) and the number columns (n) is the sum of the number 
+        of cells in all the datasets. 
+
+    Raises
+    ------
+    
+    ValueError
+        If the number and type of genes are not the same in all the datasets. 
+
+    """
 
     print("Merging Batches . . .")
     data_frames = [batches[0].data]
@@ -342,7 +402,50 @@ def MergeBatches(batches):
 
 
 
-def CorrectBatches(batches, correct_order, name_by = None, k = 20, sigma = 10, svd_dim = 0, adj_var = True):
+def CorrectBatches(batches, correct_order, k = 20, sigma = 10, svd_dim = 0, adj_var = True):
+    """
+    Implements the Mutual Nearest Neighbour (MNN) approach to correcting batch effects in the integrated 
+    and merged datasets.  
+
+    Parameters
+    ----------
+
+    batches : SingleCell
+        An integrated and merged SingleCell object (dataset) to correct. This dataset should have a 'batch' column 
+        in the celldata dataframe with batch information.
+
+    correct_order : list
+        A Python list by the batch number or name representing the order in which to correct the batches.
+        The first batch in the list is the reference batch. 
+    
+    k : int, optional
+        The number of Mutual Nearest Neighbours to compute between the datasets to be corrected. default (20).
+    
+    signa : float, optional
+        A parameter controlling the width of the Gaussian kernel smoothing function. 
+    
+    svd_dim : int, optional
+        The dimensionality of U when computing the SVD of data, where U, S, V^T = svd(X). default (0).
+    
+    adj_var : bool, optional
+        Whether or not to adjust the variance of the computed batch vectors. True (default) if adjust 
+        the variance, False if not.
+    
+
+    Returns
+    -------
+
+    SingleCell
+        The corrected dataset.  
+
+    Raises
+    ------
+    
+    ValueError
+        If the length of 'correct_order' is less than 2, and if no batch information is found in
+        the input parameter 'batches'.  
+
+    """
 
     # Check the following:
     # 1. at least two batches must be present
