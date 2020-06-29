@@ -31,14 +31,14 @@ def SelectTopNScores(clustering_score, n):
 
 
 """
-============================
+==============================
 Method Name: AnovaHierarchical
-============================
+==============================
 
 Method Description: This method implements the proposed FeatClust approach. 
 
 
-Arguments:
+Parameters
 ========== 
 
 sc_obj              -   A single cell object which contains the data and metadata of genes and cells
@@ -49,8 +49,8 @@ normalization       -   A string variable. The type of normalization to apply. O
 k                   -   The number of groups to divide the features of the dataset into. Valid range n_clusters <= k < d. DefaultDefault (10)
 
 
-Returns:
-========
+Returns
+=======
 
 sc_obj              -   The single cell object containing the cluster labels in the CellData assay. A column is added to the cell data 
                         assay containing the cluster labels. The column name is the method name 'FeatClust'. 
@@ -60,8 +60,7 @@ sc_obj              -   The single cell object containing the cluster labels in 
 # ANOVA Hierarchical Clustering
 def AnovaHierarchical(
     sc,                                
-    n_clusters, 
-    classification_type,
+    k, 
     normalization,
     q
     ):
@@ -95,12 +94,8 @@ def AnovaHierarchical(
     
     # Perform ANOVA analysis to find significant genes
     print("Performing Feature Selection . . .")
-    if (classification_type == "f_classif"):
-        feat_sel = SelectKBest(f_classif, k="all")
+    feat_sel = SelectKBest(f_classif, k="all")
         
-    elif (classification_type == "mutual_info_classif"):
-        feat_sel = SelectKBest(mutual_info_classif, k="all")
-    
     feat_sel.fit(X_nrm, temp_labels)
     feature_scores = feat_sel.scores_
     idx = np.argsort(feature_scores, kind='mergesort')
@@ -140,9 +135,8 @@ def AnovaHierarchical(
 
 def Cluster(    
     sc,                                
-    n_clusters = "gap",
-    n_clusters_max = 10, 
-    classification_type = "f_classif",
+    k = "gap",
+    k_max = 10, 
     normalization = 'mean',
     q = None 
     ):
@@ -159,105 +153,107 @@ def Cluster(
     sc : SingleCell
         The SingleCell dataset containing gene expression data to be clustered.  
     
-    n_clusters : int, list or str, optional
+    k : int, list or str, optional
         This is an optional input for the number of clusters in the dataset. It is either an int,
         a Python list of ints or a str. If it is an int, the method will cluster the data into 
-        n_clusters groups. If it is a Python list, the method will cluster the data into the number 
+        k groups. If it is a Python list, the method will cluster the data into the number 
         of groups specified in the list and store the cluster information for all the values in the
         list. If it is the string 'gap', the method will use gap statistic to estimate the number 
         of clusters and cluster the data into the number of groups estimated. 
     
-    n_clusters_max : int, optional
+    k_max : int, optional
         The upper limit of the number of clusters when using gap statistic to estimate the 
-        number of clusters. Ignored if n_clusters is not 'gap'. Default 10.
+        number of clusters. Ignored if k is not 'gap'. Default 10.
     
-    normalization : str
-        The normalization to use when normalizing the data. 
+    normalization : str, optional
+        The normalization method to use when normalizing the gene expression data. By default the
+        normalized data is not saved in the SingleCell object after using the Cluster function. If you 
+        want to save the normalized counts in the SingleCell object, you can use the FeatureNormalize() 
+        function. Type help(FeatureNormalize) for more information. Options for the normalization are 
+        'mean' for z-score normalization (default), 'l2' for L2 normalization, 'cosine' for Cosine 
+        normalization and None for no normalization. 
+
+    q : list, optional
+        This parameter is an int list which specifies the number of top features to select. The
+        clustering algorithm selects each q_i top features in this list, perofrms clustering, 
+        computes the clustering score,and then determines the optimal number of features which
+        give best clustering. By default q = [1, 2, ..., 5% of d], where d is the number of features. 
 
     Returns
     -------
 
     SingleCell
-        The SingleCell object with the cluster information stored. 
+        The SingleCell object with the cluster information stored in the celldata assay. 
 
     int
-        The number of clusters in the dataset.  
+        The number of clusters in the dataset, k. This output is useful when k is not known and estimated
+        by the algorithm.
 
     Raises
     ------
     
     ValueError
-        If no common genes are found between the SingleCell datasets in the batches list. 
+        If k_max is < 2. 
+        If k > n and < 2, where n is the number of samples in the dataset. 
+        If unknown input types/class is detected. 
 
     """
-
-
-
-
-
-
-
-
-
 
     if (type(q) == type(None)):
         q = np.arange(1, int((5/100) * sc.dim[0]) + 1) # Default value of q
 
-    if (type(n_clusters) is str):
-        if (n_clusters == "gap"):
-            if ((n_clusters_max != None) and (n_clusters_max >= 2)):
-                n_clusters, _, _, _, _ = GapStatistics( 
+    if (type(k) is str):
+        if (k == "gap"):
+            if ((k_max != None) and (k_max >= 2)):
+                k, _, _, _, _ = GapStatistics( 
                     sc,
-                    n_clusters_max = n_clusters_max,
+                    k_max = k_max,
                     B = 500
                     )
                 
-                print ("Number of clusters estimated by gap statistics: ", n_clusters)
+                print ("Number of clusters estimated by gap statistics: ", k)
 
                 sc = AnovaHierarchical(   
                     sc,
-                    n_clusters = n_clusters,
-                    classification_type = classification_type,
+                    k = k,
                     normalization = normalization,
                     q = q
                     )
 
             else:
-                raise ValueError("If n_clusters is 'gap', then n_clusters_max should be an integer greater than or equal to 2.")
+                raise ValueError("If k is 'gap', then k_max should be an integer greater than or equal to 2.")
 
 
         else:
-            raise ValueError("Unidentified string value for n_clusters. Supports only the string 'gap', to determine n_clusters using gap statistics")
+            raise ValueError("Unidentified string value for k. Supports only the string 'gap', to determine k using gap statistics")
 
-    elif (type(n_clusters) is list):
-        if (type(n_clusters[0]) is int):
+    elif (type(k) is list):
+        if (type(k[0]) is int):
 
-            for n in n_clusters:
+            for n in k:
 
                 sc = AnovaHierarchical(   
                     sc,
-                    n_clusters = n,
-                    classification_type = classification_type,
+                    k = n,
                     normalization = normalization,
                     q = q
                     )
 
         else:
-            raise ValueError("Unknown type of values in list n_clusters. Only supports int types.")
+            raise ValueError("Unknown type of values in list k. Only supports int types.")
     
-    elif (type(n_clusters) is int):
+    elif (type(k) is int):
 
         sc = AnovaHierarchical(   
             sc,
-            n_clusters = n_clusters,
-            classification_type = classification_type,
+            k = k,
             normalization = normalization,
             q = q
             )
 
     else:
 
-        raise ValueError("Unknown value for n_clusters. It should be an int, list of ints or the string 'gap'.")
+        raise ValueError("Unknown value for k. It should be an int, list of ints or the string 'gap'.")
 
 
-    return sc, n_clusters
+    return sc, k
