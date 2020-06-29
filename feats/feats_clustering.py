@@ -88,9 +88,9 @@ def AnovaHierarchical(
     # FEATURE SELECTION STEP
     # Using Hierarchical Clustering, compute and store temporary clusters in sc object
     print("Computing Temporary Clusters . . .")
-    model_hc = AgglomerativeClustering(n_clusters = n_clusters, linkage='ward')
+    model_hc = AgglomerativeClustering(n_clusters = k, linkage='ward')
     temp_labels = model_hc.fit_predict(X_nrm) + 1
-    sc.addCellData(col_data = temp_labels, col_name = method_name + str(n_clusters) + "_Clusters_Temp")
+    sc.addCellData(col_data = temp_labels, col_name = method_name + str(k) + "_Clusters_Temp")
     
     # Perform ANOVA analysis to find significant genes
     print("Performing Feature Selection . . .")
@@ -110,13 +110,13 @@ def AnovaHierarchical(
     pred_labels = np.zeros([X_nrm.shape[0], q.shape[0]]) # for storing cluster labels
 
     # compute clusters and iterate
-    print("Computing " + str(n_clusters) + " clusters using best features . . .")
-    k = 0
+    print("Computing " + str(k) + " clusters using best features . . .")
+    i = 0
     for j in q:
         X_red = X_nrm[:, idx[0:j]]
-        pred_labels[:,k] = model_hc.fit_predict(X_red) + 1
-        clust_score[k] = ClusteringScore(X.T, pred_labels[:,k])
-        k = k + 1
+        pred_labels[:,i] = model_hc.fit_predict(X_red) + 1
+        clust_score[i] = ClusteringScore(X.T, pred_labels[:,i])
+        i = i + 1
 
     # FINAL CLUSTERING
     # Choose clustering with the max. clustering score
@@ -126,7 +126,7 @@ def AnovaHierarchical(
 
     # SAVE FINAL CLUSTERING RESULT
     print("Saving final cluster labels in Single Cell object . . .")
-    sc.addCellData(col_data = final_labels, col_name = method_name + str(n_clusters) + "_Clusters")
+    sc.addCellData(col_data = final_labels, col_name = method_name + str(k) + "_Clusters")
     sc.setCounts(X)
 
     return sc
