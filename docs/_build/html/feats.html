@@ -1,0 +1,1051 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>feats package &mdash; FEATS 1.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="feats" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> FEATS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">feats</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">feats package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_batchcorrection">feats.feats_batchcorrection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_clustering">feats.feats_clustering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_detectoutliers">feats.feats_detectoutliers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_filtering">feats.feats_filtering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_gapstatistics">feats.feats_gapstatistics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_transformations">feats.feats_transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats.feats_utils">feats.feats_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-feats">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#feats">FEATS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FEATS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">feats</a> &raquo;</li>
+        
+      <li>feats package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/feats.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="feats-package">
+<h1>feats package<a class="headerlink" href="#feats-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-feats.feats_batchcorrection">
+<span id="feats-feats-batchcorrection-module"></span><h2>feats.feats_batchcorrection module<a class="headerlink" href="#module-feats.feats_batchcorrection" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.AdjustShiftVariance">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">AdjustShiftVariance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X_ref</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">Corr</span></em>, <em class="sig-param"><span class="n">sigma</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.AdjustShiftVariance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.ComputeCorrectionVectors">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">ComputeCorrectionVectors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">V</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">tar_idx</span></em>, <em class="sig-param"><span class="n">sigma</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.ComputeCorrectionVectors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.ComputeMNNPairs">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">ComputeMNNPairs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X_ref</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.ComputeMNNPairs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.ComputeSpan">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">ComputeSpan</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">idx</span></em>, <em class="sig-param"><span class="n">svd_dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.ComputeSpan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.CorrectBatches">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">CorrectBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em>, <em class="sig-param"><span class="n">correct_order</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">svd_dim</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">adj_var</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.CorrectBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the Mutual Nearest Neighbour (MNN) approach to correcting batch effects in the integrated
+and merged datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batches</strong> (<em>SingleCell</em>) – An integrated and merged SingleCell object (dataset) to correct. This dataset should have a ‘batch’ column
+in the celldata dataframe with batch information.</p></li>
+<li><p><strong>correct_order</strong> (<em>list</em>) – A Python list by the batch number or name representing the order in which to correct the batches.
+The first batch in the list is the reference batch.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Mutual Nearest Neighbours to compute between the datasets to be corrected. default (20).</p></li>
+<li><p><strong>signa</strong> (<em>float</em><em>, </em><em>optional</em>) – A parameter controlling the width of the Gaussian kernel smoothing function.</p></li>
+<li><p><strong>svd_dim</strong> (<em>int</em><em>, </em><em>optional</em>) – The dimensionality of U when computing the SVD of data, where U, S, V^T = svd(X). default (0).</p></li>
+<li><p><strong>adj_var</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to adjust the variance of the computed batch vectors. True (default) if adjust
+the variance, False if not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The corrected dataset.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the length of ‘correct_order’ is less than 2, and if no batch information is found in
+    the input parameter ‘batches’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.IntegrateBatches">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">IntegrateBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em>, <em class="sig-param"><span class="n">name_by</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.IntegrateBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrates a list of SingleCell objects storing single-cell data. This function
+first finds common genes across all the datasets in the list and then merges all
+the datasets together in one SingleCell object. If no common genes are found between
+the datasets, then an error is generated with a message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batches</strong> (<em>list</em>) – A Python list of SingleCell objects (datasets) to integrate.</p></li>
+<li><p><strong>name_by</strong> (<em>list</em>) – A list of str representing column names in the SingleCell objects where gene names
+are stored. The order in this list is same as the order of SingleCell objects in
+the batches list.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A merged dataset where the number of rows (d) is equal to the number of common genes in all the
+datasets and the number columns (n) is the sum of the number of cells in all the datasets.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If no common genes are found between the SingleCell datasets in the batches list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.LogspaceAdd">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">LogspaceAdd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">log_array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.LogspaceAdd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.MergeBatches">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">MergeBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.MergeBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges a list of SingleCell objects storing single-cell data. This function
+assumes that the datasets are already integrated and the number and type of genes
+in all the datasets are the same. If this is not the case, then an error is generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batches</strong> (<em>list</em>) – A Python list of SingleCell objects (datasets) to merge. It is assumed that the
+SingleCell datasets are already integrated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A merged dataset where the number of rows (d) is equal to the number genes the datasets
+(which is the same for all the datasets) and the number columns (n) is the sum of the number
+of cells in all the datasets.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number and type of genes are not the same in all the datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.ReducedMean">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">ReducedMean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.ReducedMean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.RemoveBatchEffects">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">RemoveBatchEffects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref_batch</span></em>, <em class="sig-param"><span class="n">tar_batch</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">sigma</span></em>, <em class="sig-param"><span class="n">svd_dim</span></em>, <em class="sig-param"><span class="n">adj_var</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.RemoveBatchEffects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_batchcorrection.SqDistToLine">
+<code class="sig-prename descclassname">feats.feats_batchcorrection.</code><code class="sig-name descname">SqDistToLine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em>, <em class="sig-param"><span class="n">grad</span></em>, <em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_batchcorrection.SqDistToLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_clustering">
+<span id="feats-feats-clustering-module"></span><h2>feats.feats_clustering module<a class="headerlink" href="#module-feats.feats_clustering" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_clustering.AnovaHierarchical">
+<code class="sig-prename descclassname">feats.feats_clustering.</code><code class="sig-name descname">AnovaHierarchical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">normalization</span></em>, <em class="sig-param"><span class="n">q</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_clustering.AnovaHierarchical" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_clustering.Cluster">
+<code class="sig-prename descclassname">feats.feats_clustering.</code><code class="sig-name descname">Cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">'gap'</span></em>, <em class="sig-param"><span class="n">k_max</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">normalization</span><span class="o">=</span><span class="default_value">'mean'</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_clustering.Cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clusters gene expression data stored in SingleCell object. Stores the cluster information
+(labels) in the celldata assay of the SingleCell object. The column name under which it
+stores the cluster information is ‘FEATS_k_Clusters’, where k is the number of clusters,
+which the method can estimate or is defined by the user as an int or an int list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell dataset containing gene expression data to be clustered.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>list</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – This is an optional input for the number of clusters in the dataset. It is either an int,
+a Python list of ints or a str. If it is an int, the method will cluster the data into
+k groups. If it is a Python list, the method will cluster the data into the number
+of groups specified in the list and store the cluster information for all the values in the
+list. If it is the string ‘gap’, the method will use gap statistic to estimate the number
+of clusters and cluster the data into the number of groups estimated.</p></li>
+<li><p><strong>k_max</strong> (<em>int</em><em>, </em><em>optional</em>) – The upper limit of the number of clusters when using gap statistic to estimate the
+number of clusters. Ignored if k is not ‘gap’. Default 10.</p></li>
+<li><p><strong>normalization</strong> (<em>str</em><em>, </em><em>optional</em>) – The normalization method to use when normalizing the gene expression data. By default the
+normalized data is not saved in the SingleCell object after using the Cluster function. If you
+want to save the normalized counts in the SingleCell object, you can use the FeatureNormalize()
+function. Type help(FeatureNormalize) for more information. Options for the normalization are
+‘mean’ for z-score normalization (default), ‘l2’ for L2 normalization, ‘cosine’ for Cosine
+normalization and None for no normalization.</p></li>
+<li><p><strong>q</strong> (<em>list</em><em>, </em><em>optional</em>) – This parameter is an int list which specifies the number of top features to select. The
+clustering algorithm selects each q_i top features in this list, perofrms clustering,
+computes the clustering score,and then determines the optimal number of features which
+give best clustering. By default q = [1, 2, …, 5% of d], where d is the number of features.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>SingleCell</em> – The SingleCell object with the cluster information stored in the celldata assay.</p></li>
+<li><p><em>int</em> – The number of clusters in the dataset, k. This output is useful when k is not known and estimated
+by the algorithm.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If k_max is &lt; 2.
+    If k &gt; n and &lt; 2, where n is the number of samples in the dataset.
+    If unknown input types/class is detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_clustering.ClusteringScore">
+<code class="sig-prename descclassname">feats.feats_clustering.</code><code class="sig-name descname">ClusteringScore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">labels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_clustering.ClusteringScore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_clustering.SelectTopNScores">
+<code class="sig-prename descclassname">feats.feats_clustering.</code><code class="sig-name descname">SelectTopNScores</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clustering_score</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_clustering.SelectTopNScores" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_detectoutliers">
+<span id="feats-feats-detectoutliers-module"></span><h2>feats.feats_detectoutliers module<a class="headerlink" href="#module-feats.feats_detectoutliers" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_detectoutliers.DetectOutliers">
+<code class="sig-prename descclassname">feats.feats_detectoutliers.</code><code class="sig-name descname">DetectOutliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">cluster_label</span></em>, <em class="sig-param"><span class="n">red_dim</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">outlier_prob_thres</span><span class="o">=</span><span class="default_value">0.0001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_detectoutliers.DetectOutliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function implements the outlier detection scheme of FEATS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object which contains the data and metadata of genes and cells</p></li>
+<li><p><strong>cluster_label</strong> (<em>str</em>) – The name of the column in celldata assay of sc which stores the cluster labels of the cells</p></li>
+<li><p><strong>red_dim</strong> (<em>int</em><em>, </em><em>optional</em>) – The reduced dimentionality in which the outliers are computed. Default 2.</p></li>
+<li><p><strong>outlier_prob_thres</strong> (<em>float</em>) – The probability threshold for samples to be classified as outliers. Default 10^-4.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The single cell object containing the outlier analysis information in the celldata assay. It
+contains the following columns in the celldata assay with the outlier information:
+‘FEATS_Outliers’ - A column with the value True if the respective cell is an outlier, False otherwise.
+‘FEATS_Msd’ - The computed Mahalanobis squared distance for the respective cells.
+‘FEATS_Outlier_Score’ - The outlier score for the respective cells.
+‘FEATS_Oos’ -  A column with the value True if the respective cell was not used by the Minimum
+Covariance Determinant (MCD) algorithm in computing the robust mean and covariance matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_filtering">
+<span id="feats-feats-filtering-module"></span><h2>feats.feats_filtering module<a class="headerlink" href="#module-feats.feats_filtering" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_filtering.CellFilter">
+<code class="sig-prename descclassname">feats.feats_filtering.</code><code class="sig-name descname">CellFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">min_genes</span></em>, <em class="sig-param"><span class="n">max_genes</span></em>, <em class="sig-param"><span class="n">expr_thres</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_filtering.CellFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the cells in which the genes are lowly and/or highly expressed. Returns
+the sliced SingleCell object with the cells selected through the filtering criteria.
+This functions skips filtering and warns the user if the filtering criteria filters
+out all the samples/cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>min_genes</strong> (<em>int</em>) – The minimum number of genes in the cell in which the genes must be expressed
+with the expression threshold. The value should be &gt;= 0 and &lt;= d, where d is the
+number of genes the the dataset.</p></li>
+<li><p><strong>max_genes</strong> (<em>int</em>) – The maximum number of genes in the cell in which the gene must be expressed
+with the expression threshold. The value should be &gt;= 0 and &lt;= d, where d is the
+number of genes the the dataset.</p></li>
+<li><p><strong>expr_thres</strong> (<em>int</em><em>, </em><em>optional</em>) – The expression threshold. Default 0. The gene is considered not expressed if
+the expression count is &lt;= this threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the filtered cells.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_filtering.GeneFilter">
+<code class="sig-prename descclassname">feats.feats_filtering.</code><code class="sig-name descname">GeneFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">min_cells</span></em>, <em class="sig-param"><span class="n">max_cells</span></em>, <em class="sig-param"><span class="n">expr_thres</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_filtering.GeneFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the lowly and/or highly expressed genes stored in the SingleCell object
+based on the expression counts. Returns the sliced SingleCell object with the
+genes selected through the filtering criteria. This functions skips filtering and
+warns the user if the filtering criteria filters out all the genes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>min_cells</strong> (<em>int</em>) – The minimum number of cells in which the gene must be expressed with the
+expression threshold. The value should be &gt;= 0 and &lt;= n, where n is the
+number of cells the the dataset.</p></li>
+<li><p><strong>max_cells</strong> (<em>int</em>) – The maximum number of cells in which the gene must be expressed with the
+expression threshold. The value should be &gt;= 0 and &lt;= n, where n is the
+number of cells the the dataset.</p></li>
+<li><p><strong>expr_thres</strong> (<em>int</em><em>, </em><em>optional</em>) – The expression threshold. Default 0. The gene is considered not expressed if
+the expression count is &lt;= this threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the filtered genes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_filtering.HVGFilter">
+<code class="sig-prename descclassname">feats.feats_filtering.</code><code class="sig-name descname">HVGFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">num_genes</span></em>, <em class="sig-param"><span class="n">name_by</span><span class="o">=</span><span class="default_value">'gene_names'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_filtering.HVGFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters/Selects the Highly Variable Genes in the SingleCell object by computing
+the dispersion of each gene. Returns a sliced SingleCell object containing the top
+Highly Variable Genes. Stores additional information such as dispersion (‘FEATS_dispersion),
+mean (‘FEATS_mean’) and variance (‘FEATS_variance’) in the genedata assay of SingleCell
+object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>num_genes</strong> (<em>int</em>) – The number of Highly Variable Genes to select.</p></li>
+<li><p><strong>name_by</strong> (<em>str</em>) – The name of the column in SingleCell object that stores the gene names. This
+is used to print the top Highly Variable Genes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the top Highly Variable Genes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_filtering.LogFilter">
+<code class="sig-prename descclassname">feats.feats_filtering.</code><code class="sig-name descname">LogFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_filtering.LogFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the log-transformed gene expression data stored in
+SingleCell object. Here Log2 is performed after adding a pseudocount of 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the log-transfprmed gene expression data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_gapstatistics">
+<span id="feats-feats-gapstatistics-module"></span><h2>feats.feats_gapstatistics module<a class="headerlink" href="#module-feats.feats_gapstatistics" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_gapstatistics.ComputeWk">
+<code class="sig-prename descclassname">feats.feats_gapstatistics.</code><code class="sig-name descname">ComputeWk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">classes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_gapstatistics.ComputeWk" title="Permalink to this definition">¶</a></dt>
+<dd><p>X       - (d x n) data matrix, where n is samples and d is dimentionality
+lables  - n dimentional vector which are class labels</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_gapstatistics.GapStatistics">
+<code class="sig-prename descclassname">feats.feats_gapstatistics.</code><code class="sig-name descname">GapStatistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc_obj</span></em>, <em class="sig-param"><span class="n">k_max</span></em>, <em class="sig-param"><span class="n">B</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_gapstatistics.GapStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the gap statistic and estimates the number of clusters in the
+gene expression dataset contained in SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc_obj</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data and the metadata.</p></li>
+<li><p><strong>k_max</strong> (<em>int</em>) – The upper limit of the number of clusters.</p></li>
+<li><p><strong>B</strong> (<em>int</em>) – The number of reference datasets to generate to compute the gap quantities.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>est_clusters</strong> (<em>int</em>) – The estimate of the number of clusters in the dataset.</p></li>
+<li><p><strong>Gap_k</strong> (<em>list</em>) – The gap statistic quantity for gap. The list contains gap values for each k,
+where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>s_k</strong> (<em>list</em>) – The gap statistic quantity for standard deviation. The list contains the
+standard deviation for each k, where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>W_k</strong> (<em>list</em>) – A gap statistic quantity for each k, where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>w_bar</strong> (<em>list</em>) – A gap statistic quantity for each k, where k = 1, 2, …, k_max.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_transformations">
+<span id="feats-feats-transformations-module"></span><h2>feats.feats_transformations module<a class="headerlink" href="#module-feats.feats_transformations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_transformations.GramMatrix">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">GramMatrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">K</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.GramMatrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.PCA">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">n_comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">dist_or_kernel</span><span class="o">=</span><span class="default_value">'linear'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.PCA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the Principal Components of the gene expression data stored in
+the SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>n_comp</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Principal Components to compute. Default 1.</p></li>
+<li><p><strong>dist_or_kernel</strong> (<em>str</em><em>, </em><em>optional</em>) – The distance metric or the kernel to compute. If a distance metric is passed,
+it computes the pairwise distance between the cells and then converts the distance
+metrics to kernels. If a kernel is passed, it computes the kernel. Valid values
+are ‘linear’ (default) for linear kernel, ‘spearmans’ for Spearmans distance,
+‘euclidean’ for Euclidean distance and ‘pearsons’ for Pearsons distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the dimensionnality reduced gene expression data. The
+reduced dimensionality is n_comp. The gene names are removed and the features in the
+reduced space are named ‘PC1’, ‘PC2’ and so on.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.dist_to_kernel">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">dist_to_kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">D</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.dist_to_kernel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.euclidean">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">euclidean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.euclidean" title="Permalink to this definition">¶</a></dt>
+<dd><p>X is a (n x d) matrix where rows are samples
+Returns D which is a (n x n) matrix of distances between samples</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.linear_kernel">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">linear_kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.linear_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>X is a (n x d) matrix where rows are samples
+Returns K which is a (n x n) kernel matrix</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.pearsons">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">pearsons</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.pearsons" title="Permalink to this definition">¶</a></dt>
+<dd><p>X is a (n x d) matrix where rows are samples
+Returns D which is a (n x n) matrix of distances between samples</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.feats_transformations.spearmans">
+<code class="sig-prename descclassname">feats.feats_transformations.</code><code class="sig-name descname">spearmans</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_transformations.spearmans" title="Permalink to this definition">¶</a></dt>
+<dd><p>X is a (n x d) matrix where rows are samples
+Returns D which is a (n x n) matrix of distances between samples</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-feats.feats_utils">
+<span id="feats-feats-utils-module"></span><h2>feats.feats_utils module<a class="headerlink" href="#module-feats.feats_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="feats.feats_utils.FeatureNormalize">
+<code class="sig-prename descclassname">feats.feats_utils.</code><code class="sig-name descname">FeatureNormalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.feats_utils.FeatureNormalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the normalized gene expression data stored in
+SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – The normalization to perform. Accepted values are ‘l2’, ‘mean’, ‘norm6’ and
+‘cosine’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the normalized gene expression data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-feats">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-feats" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="feats">
+<h3>FEATS<a class="headerlink" href="#feats" title="Permalink to this headline">¶</a></h3>
+<p>FEATS is a new Python tool for performing the following downstream analysis on single-cell RNA-seq datasets:
+1. Clustering
+2. Estimating the number of clusters
+3. Outlier detection
+4. Batch correction and integration of data from multiple experiments</p>
+<p>See <a class="reference external" href="https://github.com/edwinv87/feats">https://github.com/edwinv87/feats</a> for more information and documentation.</p>
+<dl class="py function">
+<dt id="feats.CellFilter">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">CellFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">min_genes</span></em>, <em class="sig-param"><span class="n">max_genes</span></em>, <em class="sig-param"><span class="n">expr_thres</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.CellFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the cells in which the genes are lowly and/or highly expressed. Returns
+the sliced SingleCell object with the cells selected through the filtering criteria.
+This functions skips filtering and warns the user if the filtering criteria filters
+out all the samples/cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>min_genes</strong> (<em>int</em>) – The minimum number of genes in the cell in which the genes must be expressed
+with the expression threshold. The value should be &gt;= 0 and &lt;= d, where d is the
+number of genes the the dataset.</p></li>
+<li><p><strong>max_genes</strong> (<em>int</em>) – The maximum number of genes in the cell in which the gene must be expressed
+with the expression threshold. The value should be &gt;= 0 and &lt;= d, where d is the
+number of genes the the dataset.</p></li>
+<li><p><strong>expr_thres</strong> (<em>int</em><em>, </em><em>optional</em>) – The expression threshold. Default 0. The gene is considered not expressed if
+the expression count is &lt;= this threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the filtered cells.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.Cluster">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">Cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">'gap'</span></em>, <em class="sig-param"><span class="n">k_max</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">normalization</span><span class="o">=</span><span class="default_value">'mean'</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.Cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clusters gene expression data stored in SingleCell object. Stores the cluster information
+(labels) in the celldata assay of the SingleCell object. The column name under which it
+stores the cluster information is ‘FEATS_k_Clusters’, where k is the number of clusters,
+which the method can estimate or is defined by the user as an int or an int list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell dataset containing gene expression data to be clustered.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>list</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – This is an optional input for the number of clusters in the dataset. It is either an int,
+a Python list of ints or a str. If it is an int, the method will cluster the data into
+k groups. If it is a Python list, the method will cluster the data into the number
+of groups specified in the list and store the cluster information for all the values in the
+list. If it is the string ‘gap’, the method will use gap statistic to estimate the number
+of clusters and cluster the data into the number of groups estimated.</p></li>
+<li><p><strong>k_max</strong> (<em>int</em><em>, </em><em>optional</em>) – The upper limit of the number of clusters when using gap statistic to estimate the
+number of clusters. Ignored if k is not ‘gap’. Default 10.</p></li>
+<li><p><strong>normalization</strong> (<em>str</em><em>, </em><em>optional</em>) – The normalization method to use when normalizing the gene expression data. By default the
+normalized data is not saved in the SingleCell object after using the Cluster function. If you
+want to save the normalized counts in the SingleCell object, you can use the FeatureNormalize()
+function. Type help(FeatureNormalize) for more information. Options for the normalization are
+‘mean’ for z-score normalization (default), ‘l2’ for L2 normalization, ‘cosine’ for Cosine
+normalization and None for no normalization.</p></li>
+<li><p><strong>q</strong> (<em>list</em><em>, </em><em>optional</em>) – This parameter is an int list which specifies the number of top features to select. The
+clustering algorithm selects each q_i top features in this list, perofrms clustering,
+computes the clustering score,and then determines the optimal number of features which
+give best clustering. By default q = [1, 2, …, 5% of d], where d is the number of features.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>SingleCell</em> – The SingleCell object with the cluster information stored in the celldata assay.</p></li>
+<li><p><em>int</em> – The number of clusters in the dataset, k. This output is useful when k is not known and estimated
+by the algorithm.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If k_max is &lt; 2.
+    If k &gt; n and &lt; 2, where n is the number of samples in the dataset.
+    If unknown input types/class is detected.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.CorrectBatches">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">CorrectBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em>, <em class="sig-param"><span class="n">correct_order</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">svd_dim</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">adj_var</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.CorrectBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements the Mutual Nearest Neighbour (MNN) approach to correcting batch effects in the integrated
+and merged datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batches</strong> (<em>SingleCell</em>) – An integrated and merged SingleCell object (dataset) to correct. This dataset should have a ‘batch’ column
+in the celldata dataframe with batch information.</p></li>
+<li><p><strong>correct_order</strong> (<em>list</em>) – A Python list by the batch number or name representing the order in which to correct the batches.
+The first batch in the list is the reference batch.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Mutual Nearest Neighbours to compute between the datasets to be corrected. default (20).</p></li>
+<li><p><strong>signa</strong> (<em>float</em><em>, </em><em>optional</em>) – A parameter controlling the width of the Gaussian kernel smoothing function.</p></li>
+<li><p><strong>svd_dim</strong> (<em>int</em><em>, </em><em>optional</em>) – The dimensionality of U when computing the SVD of data, where U, S, V^T = svd(X). default (0).</p></li>
+<li><p><strong>adj_var</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to adjust the variance of the computed batch vectors. True (default) if adjust
+the variance, False if not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The corrected dataset.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the length of ‘correct_order’ is less than 2, and if no batch information is found in
+    the input parameter ‘batches’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.DetectOutliers">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">DetectOutliers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">cluster_label</span></em>, <em class="sig-param"><span class="n">red_dim</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">outlier_prob_thres</span><span class="o">=</span><span class="default_value">0.0001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.DetectOutliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function implements the outlier detection scheme of FEATS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object which contains the data and metadata of genes and cells</p></li>
+<li><p><strong>cluster_label</strong> (<em>str</em>) – The name of the column in celldata assay of sc which stores the cluster labels of the cells</p></li>
+<li><p><strong>red_dim</strong> (<em>int</em><em>, </em><em>optional</em>) – The reduced dimentionality in which the outliers are computed. Default 2.</p></li>
+<li><p><strong>outlier_prob_thres</strong> (<em>float</em>) – The probability threshold for samples to be classified as outliers. Default 10^-4.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The single cell object containing the outlier analysis information in the celldata assay. It
+contains the following columns in the celldata assay with the outlier information:
+‘FEATS_Outliers’ - A column with the value True if the respective cell is an outlier, False otherwise.
+‘FEATS_Msd’ - The computed Mahalanobis squared distance for the respective cells.
+‘FEATS_Outlier_Score’ - The outlier score for the respective cells.
+‘FEATS_Oos’ -  A column with the value True if the respective cell was not used by the Minimum
+Covariance Determinant (MCD) algorithm in computing the robust mean and covariance matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.FeatureNormalize">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">FeatureNormalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">norm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.FeatureNormalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the normalized gene expression data stored in
+SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>norm</strong> (<em>str</em>) – The normalization to perform. Accepted values are ‘l2’, ‘mean’, ‘norm6’ and
+‘cosine’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the normalized gene expression data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.GapStatistics">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">GapStatistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc_obj</span></em>, <em class="sig-param"><span class="n">k_max</span></em>, <em class="sig-param"><span class="n">B</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.GapStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the gap statistic and estimates the number of clusters in the
+gene expression dataset contained in SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc_obj</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data and the metadata.</p></li>
+<li><p><strong>k_max</strong> (<em>int</em>) – The upper limit of the number of clusters.</p></li>
+<li><p><strong>B</strong> (<em>int</em>) – The number of reference datasets to generate to compute the gap quantities.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>est_clusters</strong> (<em>int</em>) – The estimate of the number of clusters in the dataset.</p></li>
+<li><p><strong>Gap_k</strong> (<em>list</em>) – The gap statistic quantity for gap. The list contains gap values for each k,
+where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>s_k</strong> (<em>list</em>) – The gap statistic quantity for standard deviation. The list contains the
+standard deviation for each k, where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>W_k</strong> (<em>list</em>) – A gap statistic quantity for each k, where k = 1, 2, …, k_max.</p></li>
+<li><p><strong>w_bar</strong> (<em>list</em>) – A gap statistic quantity for each k, where k = 1, 2, …, k_max.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.GeneFilter">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">GeneFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">min_cells</span></em>, <em class="sig-param"><span class="n">max_cells</span></em>, <em class="sig-param"><span class="n">expr_thres</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.GeneFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the lowly and/or highly expressed genes stored in the SingleCell object
+based on the expression counts. Returns the sliced SingleCell object with the
+genes selected through the filtering criteria. This functions skips filtering and
+warns the user if the filtering criteria filters out all the genes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>min_cells</strong> (<em>int</em>) – The minimum number of cells in which the gene must be expressed with the
+expression threshold. The value should be &gt;= 0 and &lt;= n, where n is the
+number of cells the the dataset.</p></li>
+<li><p><strong>max_cells</strong> (<em>int</em>) – The maximum number of cells in which the gene must be expressed with the
+expression threshold. The value should be &gt;= 0 and &lt;= n, where n is the
+number of cells the the dataset.</p></li>
+<li><p><strong>expr_thres</strong> (<em>int</em><em>, </em><em>optional</em>) – The expression threshold. Default 0. The gene is considered not expressed if
+the expression count is &lt;= this threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the filtered genes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.HVGFilter">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">HVGFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">num_genes</span></em>, <em class="sig-param"><span class="n">name_by</span><span class="o">=</span><span class="default_value">'gene_names'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.HVGFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters/Selects the Highly Variable Genes in the SingleCell object by computing
+the dispersion of each gene. Returns a sliced SingleCell object containing the top
+Highly Variable Genes. Stores additional information such as dispersion (‘FEATS_dispersion),
+mean (‘FEATS_mean’) and variance (‘FEATS_variance’) in the genedata assay of SingleCell
+object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>num_genes</strong> (<em>int</em>) – The number of Highly Variable Genes to select.</p></li>
+<li><p><strong>name_by</strong> (<em>str</em>) – The name of the column in SingleCell object that stores the gene names. This
+is used to print the top Highly Variable Genes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – A sliced SingleCell object containing the top Highly Variable Genes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.IntegrateBatches">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">IntegrateBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em>, <em class="sig-param"><span class="n">name_by</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.IntegrateBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrates a list of SingleCell objects storing single-cell data. This function
+first finds common genes across all the datasets in the list and then merges all
+the datasets together in one SingleCell object. If no common genes are found between
+the datasets, then an error is generated with a message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batches</strong> (<em>list</em>) – A Python list of SingleCell objects (datasets) to integrate.</p></li>
+<li><p><strong>name_by</strong> (<em>list</em>) – A list of str representing column names in the SingleCell objects where gene names
+are stored. The order in this list is same as the order of SingleCell objects in
+the batches list.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A merged dataset where the number of rows (d) is equal to the number of common genes in all the
+datasets and the number columns (n) is the sum of the number of cells in all the datasets.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If no common genes are found between the SingleCell datasets in the batches list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.LogFilter">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">LogFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.LogFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the log-transformed gene expression data stored in
+SingleCell object. Here Log2 is performed after adding a pseudocount of 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the log-transfprmed gene expression data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.MergeBatches">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">MergeBatches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batches</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.MergeBatches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges a list of SingleCell objects storing single-cell data. This function
+assumes that the datasets are already integrated and the number and type of genes
+in all the datasets are the same. If this is not the case, then an error is generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batches</strong> (<em>list</em>) – A Python list of SingleCell objects (datasets) to merge. It is assumed that the
+SingleCell datasets are already integrated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A merged dataset where the number of rows (d) is equal to the number genes the datasets
+(which is the same for all the datasets) and the number columns (n) is the sum of the number
+of cells in all the datasets.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number and type of genes are not the same in all the datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="feats.PCA">
+<code class="sig-prename descclassname">feats.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sc</span></em>, <em class="sig-param"><span class="n">n_comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">dist_or_kernel</span><span class="o">=</span><span class="default_value">'linear'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feats.PCA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and stores the Principal Components of the gene expression data stored in
+the SingleCell object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sc</strong> (<em>SingleCell</em>) – The SingleCell object containing gene expression data.</p></li>
+<li><p><strong>n_comp</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of Principal Components to compute. Default 1.</p></li>
+<li><p><strong>dist_or_kernel</strong> (<em>str</em><em>, </em><em>optional</em>) – The distance metric or the kernel to compute. If a distance metric is passed,
+it computes the pairwise distance between the cells and then converts the distance
+metrics to kernels. If a kernel is passed, it computes the kernel. Valid values
+are ‘linear’ (default) for linear kernel, ‘spearmans’ for Spearmans distance,
+‘euclidean’ for Euclidean distance and ‘pearsons’ for Pearsons distance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sc</strong> – The SingleCell object containing the dimensionnality reduced gene expression data. The
+reduced dimensionality is n_comp. The gene names are removed and the features in the
+reduced space are named ‘PC1’, ‘PC2’ and so on.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>SingleCell</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="feats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Edwin Vans
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
