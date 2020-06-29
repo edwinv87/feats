@@ -5,30 +5,43 @@ from scipy.stats import chi2
 from sklearn.decomposition import PCA
 
 
-"""
-============================
-Method Name: DetectOutliers
-============================
 
-Method Description: This method implements the outlier detection algorithm. 
-
-
-Arguments:
-========== 
-
-sc                  -   A single cell object which contains the data and metadata of genes and cells
-n_clusters          -   The number of group in the clustered data
-
-Returns:
-========
-
-sc                  -   The single cell object containing the outlier scores in the CellData assay. A column is added to the cell data 
-                        assay containing the cluster labels. The column name is the method name 'FeatClust'. 
-
-"""
 
 def DetectOutliers(sc, cluster_label, red_dim = 2, outlier_prob_thres = 10**-4):
+    """
+    This function implements the outlier detection scheme of FEATS.
 
+
+    Parameters
+    ----------
+
+    sc : SingleCell              
+        The SingleCell object which contains the data and metadata of genes and cells
+
+    cluster_label : str
+        The name of the column in celldata assay of sc which stores the cluster labels of the cells
+
+    red_dim : int, optional
+        The reduced dimentionality in which the outliers are computed. Default 2. 
+
+    outlier_prob_thres : float
+        The probability threshold for samples to be classified as outliers. Default 10^-4. 
+        
+
+    Returns
+    -------
+
+    SingleCell
+        The single cell object containing the outlier analysis information in the celldata assay. It 
+        contains the following columns in the celldata assay with the outlier information: 
+        'FEATS_Outliers' - A column with the value True if the respective cell is an outlier, False otherwise.
+        'FEATS_Msd' - The computed Mahalanobis squared distance for the respective cells. 
+        'FEATS_Outlier_Score' - The outlier score for the respective cells.
+        'FEATS_Oos' -  A column with the value True if the respective cell was not used by the Minimum
+        Covariance Determinant (MCD) algorithm in computing the robust mean and covariance matrix. 
+
+    """
+    
     # Store outlier probability in sc object 
     sc.addCellData(col_data = -np.log10(np.ones(sc.dim[1]) * outlier_prob_thres), col_name = 'Outlier_Thres')
 
@@ -96,7 +109,7 @@ def DetectOutliers(sc, cluster_label, red_dim = 2, outlier_prob_thres = 10**-4):
 
         sc.addCellData(col_data = outliers, col_name = "FEATS_Outliers")
         sc.addCellData(col_data = squared_md, col_name = "FEATS_Msd")
-        sc.addCellData(col_data = outlier_score, col_name = "Outlier_Score")
+        sc.addCellData(col_data = outlier_score, col_name = "FEATS_Outlier_Score")
         sc.addCellData(col_data = oos, col_name = "FEATS_Oos")
 
     return sc
