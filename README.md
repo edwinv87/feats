@@ -1,5 +1,7 @@
 # FEATS
 
+## Description
+
 FEATS is a new Python tool for performing the following downstream analysis on single-cell RNA-seq datasets:
 
 1. Clustering
@@ -17,10 +19,6 @@ To install FEATS run the following command:
 
 The functional reference manual for FEATS is available [here](https://feats.readthedocs.io/en/latest/index.html).
 
-## Usage
-
-Details coming soon.
-
 ### Prerequisites
 
 FEATS depends on the following packages
@@ -33,7 +31,7 @@ FEATS depends on the following packages
 
 ### Examples
 
-To use FEATS, please refer to the following examples presented in notebook sytle environment.
+To use FEATS, please refer to the following example code presented in notebook sytle environment.
 
 1. [Clustering using FEATS](docs/FEATS-Clustering.md)
 2. Performing outlier analysis
