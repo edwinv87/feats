@@ -33,9 +33,10 @@ dataset_params = json.load(open("dset_param.txt"))
 
 dataset = "kolodziejczyk"
 dset_name = dataset_params[dataset]['dset_name']
-data_path = "datasets/" + dset_name + '/' + dset_name + "_data.csv"
-celldata_path = "datasets/" + dset_name + '/' + dset_name + "_celldata.csv"
-genedata_path = "datasets/" + dset_name + '/' + dset_name + "_genedata.csv"
+path = "datasets/"
+data_path = path + dset_name + '/' + dset_name + "_data.csv"
+celldata_path = path + dset_name + '/' + dset_name + "_celldata.csv"
+genedata_path = path + dset_name + '/' + dset_name + "_genedata.csv"
 
 data = pd.read_csv(data_path, index_col=0)
 celldata = pd.read_csv(celldata_path, index_col=0)
