@@ -4,11 +4,11 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import AgglomerativeClustering
 
 def ComputeWk(X, labels, classes):
-    '''
+    """
     X       - (d x n) data matrix, where n is samples and d is dimentionality
     lables  - n dimentional vector which are class labels
 
-    '''
+    """
     Wk = 0
 
     for i in range(classes):
@@ -20,10 +20,48 @@ def ComputeWk(X, labels, classes):
 
 
 def GapStatistics(  sc_obj,
-                    n_clusters_max,
+                    k_max,
                     B):
 
-    k_clusters = np.arange(1, n_clusters_max + 1)
+    """
+    Computes the gap statistic and estimates the number of clusters in the
+    gene expression dataset contained in SingleCell object. 
+
+    Parameters
+    ----------
+
+    sc_obj : SingleCell
+        The SingleCell object containing gene expression data and the metadata.  
+    
+    k_max : int
+        The upper limit of the number of clusters. 
+    
+    B : int
+        The number of reference datasets to generate to compute the gap quantities.
+
+    Returns
+    -------
+
+    est_clusters : int
+        The estimate of the number of clusters in the dataset. 
+
+    Gap_k : list
+        The gap statistic quantity for gap. The list contains gap values for each k,
+        where k = 1, 2, ..., k_max.
+    
+    s_k : list 
+        The gap statistic quantity for standard deviation. The list contains the  
+        standard deviation for each k, where k = 1, 2, ..., k_max.
+    
+    W_k : list
+        A gap statistic quantity for each k, where k = 1, 2, ..., k_max.
+
+    w_bar : list
+        A gap statistic quantity for each k, where k = 1, 2, ..., k_max.
+
+    """
+
+    k_clusters = np.arange(1, k_max + 1)
     Gap_k = np.zeros(k_clusters.shape)
     s_k = np.zeros(k_clusters.shape)
     W_k = np.zeros(k_clusters.shape)
