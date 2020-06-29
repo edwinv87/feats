@@ -39,7 +39,7 @@ To use FEATS, please refer to the following example code presented in notebook s
 
 ### Data
 
-The data for the examples in this section is available [here](https://1drv.ms/u/s!At-SAxmefBX_gr47oWbiMS8vSSKWRA?e=F4FUrt).
+The data for the examples in this section is available [here](https://1drv.ms/u/s!At-SAxmefBX_gr47oWbiMS8vSSKWRA?e=F4FUrt). The data is contained in subfolders the datasets folder. The subfolders are named according to the dataset name. To load the data for the examples above, provide the path to the datasets folder.
 
 ## Paper
 
@@ -47,4 +47,4 @@ Coming soon!
 
 ## Contact
 
-Contact the author on vans.edw@gmail.com to give feedback/suggestions for further improvements and to report issues.
+Contact the author on <vans.edw@gmail.com> to give feedback/suggestions for further improvements and to report issues.
