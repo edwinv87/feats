@@ -147,6 +147,59 @@ def Cluster(
     q = None 
     ):
 
+    """
+    Clusters gene expression data stored in SingleCell object. Stores the cluster information
+    (labels) in the celldata assay of the SingleCell object. The column name under which it
+    stores the cluster information is 'FEATS_k_Clusters', where k is the number of clusters,
+    which the method can estimate or is defined by the user as an int or an int list.
+
+    Parameters
+    ----------
+
+    sc : SingleCell
+        The SingleCell dataset containing gene expression data to be clustered.  
+    
+    n_clusters : int, list or str, optional
+        This is an optional input for the number of clusters in the dataset. It is either an int,
+        a Python list of ints or a str. If it is an int, the method will cluster the data into 
+        n_clusters groups. If it is a Python list, the method will cluster the data into the number 
+        of groups specified in the list and store the cluster information for all the values in the
+        list. If it is the string 'gap', the method will use gap statistic to estimate the number 
+        of clusters and cluster the data into the number of groups estimated. 
+    
+    n_clusters_max : int, optional
+        The upper limit of the number of clusters when using gap statistic to estimate the 
+        number of clusters. Ignored if n_clusters is not 'gap'. Default 10.
+    
+    normalization : str
+        The normalization to use when normalizing the data. 
+
+    Returns
+    -------
+
+    SingleCell
+        The SingleCell object with the cluster information stored. 
+
+    int
+        The number of clusters in the dataset.  
+
+    Raises
+    ------
+    
+    ValueError
+        If no common genes are found between the SingleCell datasets in the batches list. 
+
+    """
+
+
+
+
+
+
+
+
+
+
     if (type(q) == type(None)):
         q = np.arange(1, int((5/100) * sc.dim[0]) + 1) # Default value of q
 
