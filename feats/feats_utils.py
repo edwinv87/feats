@@ -4,9 +4,30 @@ from sklearn.preprocessing import normalize
 
 # Function to normalize the features of X
 def FeatureNormalize(sc, norm):
-# X shape is (features, samples)
-# norm is either l2, mean
-# Returns a matrix X_nrm containing normalized values (same shape as X)
+    """
+    Computes and stores the normalized gene expression data stored in 
+    SingleCell object.  
+
+    Parameters
+    ----------
+
+    sc : SingleCell
+        The SingleCell object containing gene expression data.  
+    
+    norm : str
+        The normalization to perform. Accepted values are 'l2', 'mean', 'norm6' and 
+        'cosine'. 
+
+    Returns
+    -------
+
+    sc : SingleCell
+        The SingleCell object containing the normalized gene expression data.
+
+
+    """
+    
+
     # print ("Applying " + norm + " Normalization . . .")
     X = sc.getCounts()
     if (norm == "l2"):
