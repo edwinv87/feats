@@ -35,7 +35,7 @@ FEATS depends on the following packages
 
 To use FEATS, please refer to the following examples presented in notebook sytle environment.
 
-1. Clustering using FEATS
+1. [Clustering using FEATS](docs/FEATS-Clustering.md)
 2. Performing outlier analysis
 3. Performing batch correction
 
