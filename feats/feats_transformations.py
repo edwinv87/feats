@@ -78,15 +78,37 @@ def GramMatrix(K):
     return K_bar
 
 
-"""
-Kernel PCA
-
-X   -   (d x n) Matrix containing the data
-
-
-"""
 
 def PCA(sc, n_comp = 1, dist_or_kernel = 'linear'):
+    """
+    Computes and stores the Principal Components of the gene expression data stored in 
+    the SingleCell object.  
+
+    Parameters
+    ----------
+
+    sc : SingleCell
+        The SingleCell object containing gene expression data.  
+    
+    n_comp : int, optional
+        The number of Principal Components to compute. Default 1. 
+
+    dist_or_kernel : str, optional
+        The distance metric or the kernel to compute. If a distance metric is passed,
+        it computes the pairwise distance between the cells and then converts the distance
+        metrics to kernels. If a kernel is passed, it computes the kernel. Valid values 
+        are 'linear' (default) for linear kernel, 'spearmans' for Spearmans distance, 
+        'euclidean' for Euclidean distance and 'pearsons' for Pearsons distance. 
+
+    Returns
+    -------
+
+    sc : SingleCell
+        The SingleCell object containing the dimensionnality reduced gene expression data. The 
+        reduced dimensionality is n_comp. The gene names are removed and the features in the 
+        reduced space are named 'PC1', 'PC2' and so on. 
+
+    """
 
     sc = FeatureNormalize(sc, 'mean')
     X = sc.getCounts()
