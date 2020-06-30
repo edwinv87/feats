@@ -465,7 +465,7 @@ def CorrectBatches(batches, correct_order, k = 20, sigma = 10, svd_dim = 0, adj_
             idx = np.logical_or(idx, (batch_info == correct_order_split[i]))
   
     ref_batch = batches[:, idx.tolist()]
-    print(ref_batch.dim)
+    # print(ref_batch.dim)
     ref_batch.dataset = correct_order[0]
 
     for i in range(1, len(correct_order)):
