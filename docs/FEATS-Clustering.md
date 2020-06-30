@@ -56,7 +56,7 @@ nc = dataset_params[dataset]['nc'] # This is the true number of
 
 ## Log transformation
 
-The LogFilter function takes the Log (with base 2) of the expression counts stored in sc and stores the log transformed values in the data assay.
+The `LogFilter` function takes the Log (with base 2) of the expression counts stored in sc and stores the log transformed values in the data assay.
 
 ```python
 # Take a log transformation of gene expressions
@@ -65,7 +65,7 @@ sc = LogFilter(sc)
 
 ## Gene filtering
 
-The GeneFilter function filters out genes based on the filtering criteria. It accepts three arguments apart from the sc object which are `min_cells`, `max_cells` and `expr_thres`. The GeneFilter function filters out genes expressed (with expression value less than or equal to `expr_thres`) in less than `min_cells` and greater than `max_cells` number of cells. Here we use 10% of cells as the `min_cells` and 90% of cells as `max_cells`. `expr_thres` is 0 by default.
+The `GeneFilter` function filters out genes based on the filtering criteria. It accepts three arguments apart from the sc object which are `min_cells`, `max_cells` and `expr_thres`. The GeneFilter function filters out genes expressed (with expression value less than or equal to `expr_thres`) in less than `min_cells` and greater than `max_cells` number of cells. Here we use 10% of cells as the `min_cells` and 90% of cells as `max_cells`. `expr_thres` is 0 by default.
 
 ```python
 # Perform Gene Filtering
@@ -81,7 +81,7 @@ sc = GeneFilter(sc,
 
 ## Clustering
 
-The Cluster function from FEATS is used to cluster the cells in the dataset. The first argument is the SingleCell object. The second argument is the number of clusters in the data `n_clusters`. Since we know this for this dataset, we pass the true number of clusters, `nc`. This parameter also accepts a python list of integers as number of clusters. Clustering will be performed using all the integers in the list. It also accepts the string `'gap'`, in which case it will estimate the number of clusters using gap statistic. The output argument is the SingleCell object which stores the computed clusters and other information. The second output argument is the number of clusters in the data (which we don't need in this case).
+The `Cluster` function from FEATS is used to cluster the cells in the dataset. The first argument is the SingleCell object. The second argument is the number of clusters in the data `n_clusters`. Since we know this for this dataset, we pass the true number of clusters, `nc`. This parameter also accepts a python list of integers as number of clusters. Clustering will be performed using all the integers in the list. It also accepts the string `'gap'`, in which case it will estimate the number of clusters using gap statistic. The output argument is the SingleCell object which stores the computed clusters and other information. The second output argument is the number of clusters in the data (which we don't need in this case).
 
 ```python
 # Perform clustering
@@ -96,7 +96,7 @@ sc, _ = Cluster(sc, k = nc)
 
 ## Adjusted rand index
 
-We can assess the clustering performance by computing the ARI using `adjusted_rand_score` function from scikit-learn package. The sc object stores the true cluster labels. We can get a numeric version of the true cell labels using the function `getNumericCellLabels` if it is stored as a string or in any other form. The FEATS clustering also stores the computed cluster labels in the celldata assay under the column name `FEATS_k_Clusters`, where `k` is the number of clusters. 
+We can assess the clustering performance by computing the ARI using `adjusted_rand_score` function from scikit-learn package. The sc object stores the true cluster labels. We can get a numeric version of the true cell labels using the function `getNumericCellLabels` if it is stored as a string or in any other form. The FEATS clustering also stores the computed cluster labels in the celldata assay under the column name `FEATS_k_Clusters`, where `k` is the number of clusters.
 
 ```python
 # Compute and print the Adjusted Rand Score
