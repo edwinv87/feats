@@ -34,7 +34,7 @@ The functional reference manual for FEATS is available [here](https://feats.read
 To use FEATS, please refer to the following example code presented in notebook sytle environment.
 
 1. [Clustering using FEATS](docs/FEATS-Clustering.md)
-2. Performing outlier analysis
+2. [Performing outlier analysis](docs/FEATS-Outlier-Detection.md)
 3. Performing batch correction
 
 ### Data
