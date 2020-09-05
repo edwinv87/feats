@@ -1,5 +1,3 @@
-# FEATS
-
 ## Description
 
 FEATS is a new Python tool for performing the following downstream analysis on single-cell RNA-seq datasets:

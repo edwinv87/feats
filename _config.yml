@@ -1,5 +1,2 @@
 title: FEATS
-remote_theme: "mmistakes/minimal-mistakes@4.20.1"
-minimal_mistakes_skin: "dirt"
-plugins:
-  - jekyll-include-cache
+theme: jekyll-theme-cayman
