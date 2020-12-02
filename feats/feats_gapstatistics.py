@@ -71,6 +71,7 @@ def GapStatistics(  sc_obj,
 
     pc = PCA(n_components=0.99)
     X_red = pc.fit_transform(X.T)
+    print("Number of components selected = ", pc.n_components_)
 
     Xmin = np.amin(X_red, axis = 0)
     Xmax = np.amax(X_red, axis = 0)
