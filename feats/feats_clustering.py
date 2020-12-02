@@ -124,6 +124,7 @@ def AnovaHierarchical(
     final_labels = pred_labels[:, mask]
     final_labels = final_labels.astype(int)
 
+    print ("Optimal number of features = ", mask + 1)
     # SAVE FINAL CLUSTERING RESULT
     print("Saving final cluster labels in Single Cell object . . .")
     sc.addCellData(col_data = final_labels, col_name = method_name + str(k) + "_Clusters")
