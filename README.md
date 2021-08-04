@@ -41,7 +41,7 @@ The data for the examples in this section is available [here](https://1drv.ms/u/
 
 ## Paper
 
-Coming soon!
+The paper is available [here](https://academic.oup.com/bib/article-abstract/22/4/bbaa306/6025503)
 
 ## Contact
 
