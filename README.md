@@ -33,7 +33,7 @@ To use FEATS, please refer to the following example code presented in the Jupyte
 
 1. [Clustering using FEATS](https://edwinv87.github.io/feats/docs/FEATS-Clustering.html)
 2. [Performing outlier analysis](https://edwinv87.github.io/feats/docs/FEATS-Outlier-Detection.html)
-3. [Performing batch correction](https://edwinv87.github.io/feats/docs/FEATS-Batch-Correction.html)
+3. [Performing batch correction](https://anaconda.org/edwinvans/feats-batch-correction/notebook)
 
 ### Data
 
