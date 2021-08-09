@@ -1,10 +1,6 @@
 /dist/
 /build/
 /tests/
-/scripts/
-/docs/
-/.vscode/
-/.idea/
 *.egg-info/
 __pycache__/
 TOKEN.txt
