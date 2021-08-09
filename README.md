@@ -1,6 +1,6 @@
-## Description
+# FEATS
 
-FEATS is a new Python tool for performing the following downstream analysis on single-cell RNA-seq datasets:
+FEATS is a Python tool for performing the following downstream analysis on single-cell RNA-seq datasets:
 
 1. Clustering
 2. Estimating the number of clusters
@@ -19,7 +19,7 @@ FEATS depends on the following packages
 
 ## Installation
 
-To install FEATS run the following command:
+The latest version of FEATS can be installed from PyPI:
 
 `pip install feats`
 
@@ -29,7 +29,7 @@ The functional reference manual for FEATS is available [here](https://feats.read
 
 ### Examples
 
-To use FEATS, please refer to the following example code presented in notebook sytle environment.
+To use FEATS, please refer to the following example code presented in the Jupyter notebook.
 
 1. [Clustering using FEATS](https://edwinv87.github.io/feats/docs/FEATS-Clustering.html)
 2. [Performing outlier analysis](https://edwinv87.github.io/feats/docs/FEATS-Outlier-Detection.html)
@@ -37,12 +37,12 @@ To use FEATS, please refer to the following example code presented in notebook s
 
 ### Data
 
-The data for the examples in this section is available [here](https://1drv.ms/u/s!At-SAxmefBX_gr47oWbiMS8vSSKWRA?e=F4FUrt). The data is contained in subfolders in the datasets folder. The subfolders are named according to the dataset name. To load the data for the examples above, provide the path to the datasets folder.
+The data for the examples in this section is available [here](https://edwinvans.com/datasets/). The data is contained in subfolders in the datasets folder. The subfolders are named according to the dataset name. To load the data for the examples above, provide the path to the datasets folder on your local machine.
 
 ## Paper
 
-The paper is available [here](https://academic.oup.com/bib/article-abstract/22/4/bbaa306/6025503)
+The FEATS paper is published in the journal Briefings in Bioinformatics. It is available [here](https://academic.oup.com/bib/article-abstract/22/4/bbaa306/6025503)
 
 ## Contact
 
-Contact the author on <vans.edw@gmail.com> to give feedback/suggestions for further improvements and to report issues.
+Contact the author on <info@edwinvans.com> to give feedback/suggestions for further improvements and to report issues.
