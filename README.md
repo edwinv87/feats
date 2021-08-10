@@ -29,10 +29,10 @@ The functional reference manual for FEATS is available [here](https://feats.read
 
 ### Examples
 
-To use FEATS, please refer to the following example code presented in the Jupyter notebook.
+To use FEATS, please refer to the latest version of example code presented in the Jupyter notebook. 
 
-1. [Clustering using FEATS](https://edwinv87.github.io/feats/docs/FEATS-Clustering.html)
-2. [Performing outlier analysis](https://edwinv87.github.io/feats/docs/FEATS-Outlier-Detection.html)
+1. [Clustering using FEATS](https://anaconda.org/edwinvans/feats-clustering/notebook)
+2. [Performing outlier analysis](https://anaconda.org/edwinvans/feats-outlier-detection/notebook)
 3. [Performing batch correction](https://anaconda.org/edwinvans/feats-batch-correction/notebook)
 
 ### Data
